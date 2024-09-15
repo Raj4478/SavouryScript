@@ -3,13 +3,41 @@ import { useState,useEffect } from 'react';
 import Card from '../Card';
 import { useId } from 'react';
 import { useSelector } from 'react-redux';
-import { motion,useScroll } from 'framer-motion';
+import { color, motion,useScroll } from 'framer-motion';
 
 const Home = () => {
 
   
 const input= useSelector((state) =>state.auth.search)
 console.log(input);
+
+const styleContainer = {
+  position: "relative",
+  width: 50,
+  height: 50
+};
+
+const styleSpan = {
+  display: "block",
+  width: 50,
+  height: 50,
+
+  border: "7px solid #eee",
+  borderTop: "7px solid #2D3134",
+  borderRadius: "50%",
+  boxSizing: "border-box",
+  position: "absolute",
+  top: "",
+  left: "50vw",
+  justifyContent:"center"
+};
+
+const spinTransition = {
+  repeat: Infinity,
+  ease: "easeInOut",
+  // width: ['100%', '50%'],
+  duration: 1
+};
 
 const { scrollYProgress } = useScroll();
 const[select,setSelect] = useState(null)
@@ -61,7 +89,13 @@ console.log(input);
 
 </div>
 </>
-  ):null
+  ): <div className='flex justify-center my-40  items-center' style={styleContainer}>
+  <motion.span className='flex  justify-center items-center' 
+    style={styleSpan}
+    animate={{ rotate: 360 }}
+    transition={spinTransition}
+  />
+</div>
   
 
 }
