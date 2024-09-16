@@ -78,7 +78,7 @@ console.log(input);
 
 <>
 <motion.h1  style={{ scaleX: scrollYProgress }} />  
-<motion.h1 initial={{opacity:[0,0,0,0],x:70}} animate={{opacity:[0,0.2,0.6,1],x:0}} transition={{duration:1}} className='text-center text-4xl py-4 bg-var1 text-var2 font-new '>Simple Recipe made for <motion.span initial={{opacity:0,y:100}} animate={{opacity:1,y:0}} transition={{delay:1}} className='font-brush1 text-sky-300'>real, actual, everyday life</motion.span></motion.h1>
+<motion.h1 initial={{opacity:[0,0,0,0],x:70}} animate={{opacity:[0,0.2,0.6,1],x:0}} transition={{duration:1}} className='text-center text-4xl py-4 bg-var1 text-var2 font-new '>Simple Recipe made for <motion.span initial={{opacity:0,y:100,scale:0.5}} animate={{opacity:1,y:0,scale:1}} transition={{delay:1,duration:1}} className='font-brush1 text-sky-300'>real, actual, everyday life</motion.span></motion.h1>
 <div className='grid pt-4 grid-cols-4'>
 
 
